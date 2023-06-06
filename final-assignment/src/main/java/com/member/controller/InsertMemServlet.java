@@ -51,13 +51,13 @@ public class InsertMemServlet extends HttpServlet {
 
         String path = "";
         if(result > 0) {
-            path = "/WEB-INF/views/common/successPage.jsp";
-//			request.setAttribute("message", "신규 직원 등록에 성공하셨습니다.");
-//			response.sendRedirect(request.getContextPath() + "/WEB-INF/views/common/successPage.jsp");
+            path = "/WEB-INF/view/common/successPage.jsp";
+			request.setAttribute("message", "신규 직원 등록에 성공하셨습니다.");
+			response.sendRedirect(request.getContextPath() + "/WEB-INF/views/common/successPage.jsp");
 
             request.setAttribute("successCode", "insertMem");
         } else {
-            path = "/WEB-INF/views/common/errorPage.jsp";
+            path = "/WEB-INF/view/common/errorPage.jsp";
             request.setAttribute("message", "신규 직원 등록에 실패하셨습니다.");
         }
 

@@ -6,9 +6,9 @@
 <body>
 <jsp:include page="../common/header.jsp"/>
 
-vip코드 : ${ requestScope.selectedMem.memCode }<br>
-vip명 : ${ requestScope.selectedMem.memName }<br>
-vip성별 : ${ requestScope.selectedMem.memGender }<br>
+vip코드 : ${ requestScope.selectedMem.memberCode }<br>
+vip명 : ${ requestScope.selectedMem.memberName }<br>
+vip성별 : ${ requestScope.selectedMem.memberGender }<br>
 
 </body>
 </html>

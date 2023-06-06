@@ -5,21 +5,28 @@
 </head>
 <body>
 <jsp:include page="../common/header.jsp"/>
-<h3>MEMBER_INFO 테이블에서 MEMBER_CODE를 이용하여 사원 정보 조회해오기</h3>
+<h3>MEMBER_INFO 테이블에서 MEMBER_CODE를 이용하여 vip 정보 조회해오기</h3>
 <form action="member/select">
   <label>조회할 코드 : </label>
   <input type="text" name="memberCode" id="memberCode">
   <button type="submit">조회하기</button>
 </form>
 
-<h3>MEMBER_INFO 테이블에서 직원 전체 정보 조회 (현재 소속된 vip만 조회할 것) : /member/list (get)</h3>
+<h3>MEMBER_INFO 테이블에서 vip 전체 정보 조회 (현재 소속된 vip만 조회할 것) : /member/list (get)</h3>
 <button onclick="location.href='${pageContext.servletContext.contextPath}/member/list'">직원정보 전체 조회하기</button>
 
 <h3>MEMBER_INFO 테이블에서 신규 직원 정보 추가 (필요한 정보를 입력받을 수 있는 form을 만들어서 추가할 것) : /member/insert (post)</h3>
 <form action="${ pageContext.servletContext.contextPath }/member/insert" method="post">
+  vip코드 : <input type="text" name="memCode"><br>
   vip명 : <input type="text" name="memName"><br>
-  전화번호 : <input type="text" name="concat"><br>
+  vip성별 : <input type="text" name="memGender"><br>
+  생년월일 : <input type="text" name="birthDate"><br>
+  구분코드 : <input type="text" name="divisionCode"><br>
   주소 : <input type="text" name="memAddress"><br>
+  전화번호 : <input type="text" name="concat"><br>
+  등급코드 : <input type="text" name="gradeCode"><br>
+  활동상태 : <input type="text" name="activeStatus"><br>
+
 
 <%--  부서코드 :--%>
 <%--  <select name="deptCode">--%>

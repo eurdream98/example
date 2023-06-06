@@ -18,21 +18,21 @@ public class SelectOneMemByCodeServlet extends HttpServlet {
         /* 전달한 파라미터 꺼내기 */
         String memCode = request.getParameter("memberCode");
 
-        System.out.println("empId : " + memCode);
+        System.out.println("memCode : " + memCode);
 
         /* 사번을 이용해 사원 정보를 조회하는 비지니스 로직 호출 */
-        MemberService memberService = new MemberService();
-        MemDTO selectedMem = memberService.selectOneMemByCode(memCode);
+        MemberService memService = new MemberService();
+        MemDTO selectedMem = memService.selectOneMemByCode(memCode);
 
         System.out.println("selectedMem : " + selectedMem);
 
         /* 비지니스 로직 실행 결과에 따라 뷰 연결 */
         String path = "";
-        if(memberService != null) {
-            path = "/WEB-INF/views/employee/showEmpInfo.jsp";
-            request.setAttribute("selectedEmp", selectedMem);
+        if(selectedMem != null) {
+            path = "/WEB-INF/view/member/showMemInfo.jsp";
+            request.setAttribute("selectedMem", selectedMem);
         } else {
-            path = "/WEB-INF/views/common/errorPage.jsp";
+            path = "/WEB-INF/view/common/errorPage.jsp";
             request.setAttribute("message", "직원 정보 조회 실패!");
         }
 

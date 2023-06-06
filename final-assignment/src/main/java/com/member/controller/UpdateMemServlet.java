@@ -28,10 +28,10 @@ public class UpdateMemServlet extends HttpServlet {
 
         String path = "";
         if(result > 0) {
-            path = "/WEB-INF/views/common/successPage.jsp";
+            path = "/WEB-INF/view/common/successPage.jsp";
             request.setAttribute("successCode", "updateEmp");
         } else {
-            path = "/WEB-INF/views/common/errorPage.jsp";
+            path = "/WEB-INF/view/common/errorPage.jsp";
             request.setAttribute("message", "회원 정보 수정 실패!");
         }
 

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 @WebFilter("/*")
 public class ContextConfigFilter implements Filter {
-
+    private String encodingType;
     public ContextConfigFilter() {
     }
 
@@ -26,7 +26,7 @@ public class ContextConfigFilter implements Filter {
             System.out.println("DB접속경로 설정 완료");
             ConfigLocation.CONNECTION_CONFIG_LOCATION = root + "/" + connectionInfoPath;
         }
-
+        //
         if(ConfigLocation.MAPPER_LOCATION == null) {
             String root = request.getServletContext().getRealPath("/");
             String mapperLocation = request.getServletContext().getInitParameter("mapper-location");
