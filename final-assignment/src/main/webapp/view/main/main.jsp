@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <entry key="selectMemByCode">
+    SELECT
+    *
+    FROM MEMBER_INFO
+    WHERE
+    AND MEMBER_CODE = ?
+  </entry>
+  <entry key="selectAllMemList">
+    SELECT
+    *
+    FROM MEMBER_INFO
+
+  </entry>
+
+  <entry key="insertMem">
+    INSERT
+    INTO MEMBER_INFO
+    (
+    MEMBER_CODE
+    , MEMBER_NAME
+    , MEMBER_GENDER
+    , BIRTH_DATE
+    , DIVISION_CODE
+    , MEMBER_ADDRESS
+    , CONTACT
+    , GRADE_CODE
+    , ACTIVE_STATUS
+    )
+    VALUES
+    (
+    ?, ?, ?, ?, ?
+    , ?, ?, ?
+    )
+  </entry>
+  <entry key="updateMem">
+    UPDATE
+    MEMBER_INFO
+    SET
+    , MEMBER_NAME=?
+    , MEMBER_GENDER=?
+    , BIRTH_DATE=?
+    , DIVISION_CODE=?
+    , MEMBER_ADDRESS=?
+    , CONTACT=?
+    , GRADE_CODE=?
+    , ACTIVE_STATUS=?
+    WHERE MEMBER_CODE = ?
+  </entry>
+  <entry key="deleteMem">
+    DELETE
+    FROM MEMBER_INFO
+    WHERE MEMBER_CODE = ?
+  </entry>
+
+</properties>
