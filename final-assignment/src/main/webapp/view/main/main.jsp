@@ -17,7 +17,7 @@
 
 <h3>MEMBER_INFO 테이블에서 신규 vip 정보 추가 (필요한 정보를 입력받을 수 있는 form을 만들어서 추가할 것) : /member/insert (post)</h3>
 <form action="${ pageContext.servletContext.contextPath }/member/insert" method="post">
-
+  vip코드 : <input type="text" name="memCode"><br>
   vip명 : <input type="text" name="memName"><br>
   vip성별 : <input type="text" name="memGender"><br>
   생년월일 : <input type="text" name="birthDate"><br>

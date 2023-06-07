@@ -146,15 +146,15 @@ public class MemDAO {
 
         try {
             pstmt = con.prepareStatement(query);
-
-            pstmt.setString(1, mem.getMemberName());
-            pstmt.setString(2, mem.getMemberGender());
-            pstmt.setString(3, mem.getBirthDate());
-            pstmt.setString(4, mem.getDivisionCode());
-            pstmt.setString(5, mem.getMemberAddress());
-            pstmt.setString(6, mem.getContact());
-            pstmt.setString(7, mem.getGradeCode());
-            pstmt.setString(8, mem.getActiveStatus());
+            pstmt.setString(1,mem.getMemberCode());
+            pstmt.setString(2, mem.getMemberName());
+            pstmt.setString(3, mem.getMemberGender());
+            pstmt.setString(4, mem.getBirthDate());
+            pstmt.setString(5, mem.getDivisionCode());
+            pstmt.setString(6, mem.getMemberAddress());
+            pstmt.setString(7, mem.getContact());
+            pstmt.setString(8, mem.getGradeCode());
+            pstmt.setString(9, mem.getActiveStatus());
 
 
             result = pstmt.executeUpdate();
