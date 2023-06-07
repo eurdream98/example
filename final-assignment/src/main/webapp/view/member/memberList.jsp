@@ -27,7 +27,7 @@
             <td>${ mem.birthDate }</td>
             <td>${ mem.divisionCode }</td>
             <td>${ mem.memberAddress }</td>
-            <td>${ mem.concat }</td>
+            <td>${ mem.contact }</td>
             <td>${ mem.gradeCode }</td>
             <td>${ mem.activeStatus }</td>
 

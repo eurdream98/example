@@ -19,8 +19,8 @@
         INSERT
         INTO MEMBER_INFO
         (
-        MEMBER_CODE
-        , MEMBER_NAME
+
+         MEMBER_NAME
         , MEMBER_GENDER
         , BIRTH_DATE
         , DIVISION_CODE
@@ -31,8 +31,8 @@
         )
         VALUES
         (
-        ?, ?, ?, ?, ?
-        , ?, ?, ?
+         ?, ?, ?, ?
+        , ?, ?, ?,?
         )
     </entry>
     <entry key="updateMem">

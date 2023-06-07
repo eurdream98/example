@@ -8,7 +8,7 @@ import java.io.IOException;
 
 @WebFilter("/*")
 public class ContextConfigFilter implements Filter {
-    private String encodingType;
+
     public ContextConfigFilter() {
     }
 
