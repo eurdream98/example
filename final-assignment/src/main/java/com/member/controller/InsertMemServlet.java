@@ -23,24 +23,24 @@ public class InsertMemServlet extends HttpServlet {
         String birthDate = request.getParameter("birthDate");
         String divisionCode = request.getParameter("divisionCode");
         String memberAddress = request.getParameter("memberAddress");
-        String concat	= request.getParameter("concat");
+        String contact	= request.getParameter("contact");
         String gradeCode = request.getParameter("gradeCode");
         String activeStatus = request.getParameter("activeStatus");
 
 
 
         MemberService memberService = new MemberService();
-        String newMemCode = memberService.selectNewMemCode();
+
 
         MemDTO mem = new MemDTO();
-        if(newMemCode != null) mem.setMemberCode(newMemCode);
+
         mem.setMemberCode(memCode);
         mem.setMemberName(memName);
         mem.setMemberGender(memGender);
         mem.setBirthDate(birthDate);
         mem.setDivisionCode(divisionCode);
         mem.setMemberAddress(memberAddress);
-        mem.setConcat(concat);
+        mem.setContact(contact);
         mem.setGradeCode(gradeCode);
         mem.setActiveStatus(activeStatus);
 
@@ -51,14 +51,14 @@ public class InsertMemServlet extends HttpServlet {
 
         String path = "";
         if(result > 0) {
-            path = "/WEB-INF/view/common/successPage.jsp";
-			request.setAttribute("message", "신규 직원 등록에 성공하셨습니다.");
-			response.sendRedirect(request.getContextPath() + "/WEB-INF/views/common/successPage.jsp");
+            path = "/view/common/successPage.jsp";
+			request.setAttribute("message", "신규 vip 등록에 성공하셨습니다.");
+			response.sendRedirect(request.getContextPath() + "/view/common/successPage.jsp");
 
             request.setAttribute("successCode", "insertMem");
         } else {
-            path = "/WEB-INF/view/common/errorPage.jsp";
-            request.setAttribute("message", "신규 직원 등록에 실패하셨습니다.");
+            path = "/view/common/errorPage.jsp";
+            request.setAttribute("message", "신규 vip 등록에 실패하셨습니다.");
         }
 
         request.getRequestDispatcher(path).forward(request, response);

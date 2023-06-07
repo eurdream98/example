@@ -48,21 +48,21 @@ public class MemberService {
         return memList;
     }
 
-    public String selectNewMemCode() {
-
-        /* Connection 생성 */
-        Connection con = getConnection();
-
-        /* 비지니스 로직 */
-        /* 1. dao 호출하여 조회 */
-        String newMemCode = memDAO.selectNewMemCode(con);
-
-        /* Connection 닫기 */
-        close(con);
-
-        /* 수행 결과 반환 */
-        return newMemCode;
-    }
+//    public String selectNewMemCode() {
+//
+//        /* Connection 생성 */
+//        Connection con = getConnection();
+//
+//        /* 비지니스 로직 */
+//        /* 1. dao 호출하여 조회 */
+//        String newMemCode = memDAO.selectNewMemCode(con);
+//
+//        /* Connection 닫기 */
+//        close(con);
+//
+//        /* 수행 결과 반환 */
+//        return newMemCode;
+//    }
 
     /* 신규 사원 등록용 메소드 */
     public int insertMem(MemDTO mem) {

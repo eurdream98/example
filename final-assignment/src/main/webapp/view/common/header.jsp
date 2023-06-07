@@ -4,6 +4,6 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Welcome to MVC land!</h1>
+<h1>vip 정보 조회하기!</h1>
 </body>
 </html>

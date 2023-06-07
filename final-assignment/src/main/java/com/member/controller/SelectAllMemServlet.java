@@ -26,11 +26,11 @@ public class SelectAllMemServlet extends HttpServlet {
         /* 조회 결과 성공 여부에 따른 뷰 결정 */
         String path = "";
         if(memList != null) {
-            path = "/resources/view/member/memberList.jsp";
+            path = "/view/member/memberList.jsp";
             request.setAttribute("memList", memList);
         } else {
-            path = "/resources/common/errorPage.jsp";
-            request.setAttribute("message", "직원 목록 조회 실패!");
+            path = "/view/common/errorPage.jsp";
+            request.setAttribute("message", "vip 목록 조회 실패!");
         }
 
         request.getRequestDispatcher(path).forward(request, response);

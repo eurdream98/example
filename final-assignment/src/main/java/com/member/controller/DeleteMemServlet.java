@@ -22,11 +22,11 @@ public class DeleteMemServlet extends HttpServlet {
 
         String path = "";
         if(result > 0) {
-            path = "/WEB-INF/view/common/successPage.jsp";
+            path = "/view/common/successPage.jsp";
             request.setAttribute("successCode", "deleteMem");
         } else {
-            path = "/WEB-INF/view/common/errorPage.jsp";
-            request.setAttribute("message", "직원 삭제 실패!");
+            path = "/view/common/errorPage.jsp";
+            request.setAttribute("message", "vip 삭제 실패!");
         }
 
         request.getRequestDispatcher(path).forward(request, response);

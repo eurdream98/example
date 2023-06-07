@@ -10,7 +10,7 @@ public class MemDTO implements java.io.Serializable {
     private String birthDate;
     private String divisionCode;
     private String memberAddress;
-    private String concat;
+    private String contact;
     private String gradeCode;
     private String activeStatus;
 
@@ -18,17 +18,17 @@ public class MemDTO implements java.io.Serializable {
 
     }
 
-    public MemDTO(String memberCode, String memberName, String memGender, String birthDate, String divisionCode, String memberAddress, String concat, String gradeCode, String activeStatus) {
-        this.memberCode = memberCode;
-        this.memberName = memberName;
-        this.memberGender = memGender;
-        this.birthDate = birthDate;
-        this.divisionCode = divisionCode;
-        this.memberAddress = memberAddress;
-        this.concat = concat;
-        this.gradeCode = gradeCode;
-        this.activeStatus = activeStatus;
-    }
+//    public MemDTO(String memberCode, String memberName, String memGender, String birthDate, String divisionCode, String memberAddress, String concat, String gradeCode, String activeStatus) {
+//        this.memberCode = memberCode;
+//        this.memberName = memberName;
+//        this.memberGender = memGender;
+//        this.birthDate = birthDate;
+//        this.divisionCode = divisionCode;
+//        this.memberAddress = memberAddress;
+//        this.contact = contact;
+//        this.gradeCode = gradeCode;
+//        this.activeStatus = activeStatus;
+//    }
 
     public String getMemberCode() {
         return memberCode;
@@ -78,12 +78,12 @@ public class MemDTO implements java.io.Serializable {
         this.memberAddress = memberAddress;
     }
 
-    public String getConcat() {
-        return concat;
+    public String getContact() {
+        return contact;
     }
 
-    public void setConcat(String concat) {
-        this.concat = concat;
+    public void setContact(String contact) {
+        this.contact = contact;
     }
 
     public String getGradeCode() {
@@ -111,7 +111,7 @@ public class MemDTO implements java.io.Serializable {
                 ", birthDate='" + birthDate + '\'' +
                 ", divisionCode='" + divisionCode + '\'' +
                 ", memberAddress='" + memberAddress + '\'' +
-                ", concat='" + concat + '\'' +
+                ", concat='" + contact + '\'' +
                 ", gradeCode='" + gradeCode + '\'' +
                 ", activeStatus='" + activeStatus + '\'' +
                 '}';

@@ -51,7 +51,7 @@ public class MemDAO {
                 selectedMem.setBirthDate(rset.getString("BIRTH_DATE"));
                 selectedMem.setDivisionCode(rset.getString("DIVISION_CODE"));
                 selectedMem.setMemberAddress(rset.getString("MEMBER_ADDRESS"));
-                selectedMem.setConcat(rset.getString("CONCAT"));
+                selectedMem.setContact(rset.getString("CONTACT"));
                 selectedMem.setGradeCode(rset.getString("GRADE_CODE"));
                 selectedMem.setActiveStatus(rset.getString("ACTIVE_STATUS"));
             }
@@ -90,7 +90,7 @@ public class MemDAO {
                 mem.setBirthDate(rset.getString("BIRTH_DATE"));
                 mem.setDivisionCode(rset.getString("DIVISION_CODE"));
                 mem.setMemberAddress(rset.getString("MEMBER_ADDRESS"));
-                mem.setConcat(rset.getString("CONCAT"));
+                mem.setContact(rset.getString("CONTACT"));
                 mem.setGradeCode(rset.getString("GRADE_CODE"));
                 mem.setActiveStatus(rset.getString("ACTIVE_STATUS"));
 
@@ -108,32 +108,32 @@ public class MemDAO {
         return memList;
     }
 
-    public String selectNewMemCode(Connection con) {
-        PreparedStatement pstmt = null;
-        ResultSet rset = null;
-
-        String newMemCode = null;
-
-        String query = prop.getProperty("selectNewMemCode");
-
-        try {
-            pstmt = con.prepareStatement(query);
-
-            rset = pstmt.executeQuery();
-
-            if (rset.next()) {
-                newMemCode = rset.getString("MEMBER_CODE");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            close(rset);
-            close(pstmt);
-        }
-
-        return newMemCode;
-    }
+//    public String selectNewMemCode(Connection con) {
+//        PreparedStatement pstmt = null;
+//        ResultSet rset = null;
+//
+//        String newMemCode = null;
+//
+//        String query = prop.getProperty("selectNewMemCode");
+//
+//        try {
+//            pstmt = con.prepareStatement(query);
+//
+//            rset = pstmt.executeQuery();
+//
+//            if (rset.next()) {
+//                newMemCode = rset.getString("MEMBER_CODE");
+//            }
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        } finally {
+//            close(rset);
+//            close(pstmt);
+//        }
+//
+//        return newMemCode;
+//    }
 
     /* employee 테이블에 insert 하는 메소드 */
     public int insertMem(Connection con, MemDTO mem) {
@@ -152,7 +152,7 @@ public class MemDAO {
             pstmt.setString(4, mem.getBirthDate());
             pstmt.setString(5, mem.getDivisionCode());
             pstmt.setString(6, mem.getMemberAddress());
-            pstmt.setString(7, mem.getConcat());
+            pstmt.setString(7, mem.getContact());
             pstmt.setString(8, mem.getGradeCode());
             pstmt.setString(9, mem.getActiveStatus());
 
@@ -179,9 +179,16 @@ public class MemDAO {
 
         try {
             pstmt = con.prepareStatement(query);
-            pstmt.setString(1, mem.getMemberCode());
-            pstmt.setString(2, mem.getBirthDate());
 
+            pstmt.setString(1, mem.getMemberCode());
+            pstmt.setString(2,mem.getMemberName());
+            pstmt.setString(3,mem.getMemberGender());
+            pstmt.setString(4, mem.getBirthDate());
+            pstmt.setString(5,mem.getDivisionCode());
+            pstmt.setString(6,mem.getMemberAddress());
+            pstmt.setString(7,mem.getContact());
+            pstmt.setString(8,mem.getGradeCode());
+            pstmt.setString(9,mem.getActiveStatus());
             result = pstmt.executeUpdate();
 
         } catch (SQLException e) {

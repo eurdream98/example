@@ -10,18 +10,18 @@
 
     let successMessage = '';
     let movePath = '';
-
+    console.log(${pageContext.servletContext.contextPath});
     switch(successCode) {
       case 'insertMem' :
-        successMessage = '신규 직원 등록 성공!';
+        successMessage = '신규 vip 등록 성공!';
         movePath = '${pageContext.servletContext.contextPath}/member/list';
         break;
       case 'updateMem' :
-        successMessage = '직원 정보 수정 성공!';
+        successMessage = 'vip 정보 수정 성공!';
         movePath = '${pageContext.servletContext.contextPath}/member/list';
         break;
       case 'deleteMem' :
-        successMessage = '직원 정보 삭제 성공!';
+        successMessage = 'vip 정보 삭제 성공!';
         movePath = '${pageContext.servletContext.contextPath}/member/list';
         break;
     }

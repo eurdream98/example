@@ -18,21 +18,33 @@ public class UpdateMemServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
 
         String memberCode = request.getParameter("memCode");
+        String memberName = request.getParameter("memberName");
+        String memberGender = request.getParameter("memberGender");
         String birthDate = request.getParameter("birthDate");
-
+        String divisionCode=request.getParameter("divisionCode");
+        String memberAddress=request.getParameter("memberAddress");
+        String contact=request.getParameter("contact");
+        String gradeCode=request.getParameter("gradeCode");
+        String activeStatus=request.getParameter("activeStatus");
         MemDTO mem = new MemDTO();
         mem.setMemberCode(memberCode);
+        mem.setMemberName(memberName);
+        mem.setMemberGender(memberGender);
         mem.setBirthDate(birthDate);
-
+        mem.setDivisionCode(divisionCode);
+        mem.setMemberAddress(memberAddress);
+        mem.setContact(contact);
+        mem.setGradeCode(gradeCode);
+        mem.setActiveStatus(activeStatus);
         int result = new MemberService().updateMem(mem);
 
         String path = "";
         if(result > 0) {
-            path = "/WEB-INF/view/common/successPage.jsp";
+            path = "/view/common/successPage.jsp";
             request.setAttribute("successCode", "updateEmp");
         } else {
-            path = "/WEB-INF/view/common/errorPage.jsp";
-            request.setAttribute("message", "회원 정보 수정 실패!");
+            path = "/view/common/errorPage.jsp";
+            request.setAttribute("message", "vip 정보 수정 실패!");
         }
 
         request.getRequestDispatcher(path).forward(request, response);

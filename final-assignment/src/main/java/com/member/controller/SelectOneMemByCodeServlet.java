@@ -29,11 +29,11 @@ public class SelectOneMemByCodeServlet extends HttpServlet {
         /* 비지니스 로직 실행 결과에 따라 뷰 연결 */
         String path = "";
         if(selectedMem != null) {
-            path = "/WEB-INF/view/member/showMemInfo.jsp";
+            path = "/view/member/showMemInfo.jsp";
             request.setAttribute("selectedMem", selectedMem);
         } else {
-            path = "/WEB-INF/view/common/errorPage.jsp";
-            request.setAttribute("message", "직원 정보 조회 실패!");
+            path = "/view/common/errorPage.jsp";
+            request.setAttribute("message", "vip 정보 조회 실패!");
         }
 
         request.getRequestDispatcher(path).forward(request, response);
